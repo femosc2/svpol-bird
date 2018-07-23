@@ -1,10 +1,14 @@
 # anders-borg-bird
-Flappy Bird Clone featuring Anders Borg
+Flappy Bird Clone featuring Jonas Sjöstedt
 
 upgraded version from coding train challenge 31
 
 # How to Install
 
-npm install
+0. open Terminal
 
-http-server
+1. npm install
+
+2. http-server
+
+3. Open the IP you got in the terminal
