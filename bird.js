@@ -1,14 +1,14 @@
 function Bird() {
     this.y = height/2;
     this.x = 64;
-
     this.gravity = 0.8;
     this.lift = -12;
     this.velocity = 0;
+    this.img = loadImage("graphics/jonas.png");
 
     this.show = function()  {
         fill(255);
-        ellipse(this.x, this.y, 32, 32);
+        image(this.img, this.x, this.y, 64, 64);
     };
 
     this.up = function() {

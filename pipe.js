@@ -2,19 +2,18 @@ function Pipe() {
     this.top = random(height/2);
     this.bottom = random(height/2);
     this.x = width;
-    this.w = 20;
+    this.w = 100;
     this.speed = 3.5;
-
-    this.gameRunning = false;
-    
     this.hightlight = false;
+    this.img = loadImage("graphics/pipe.png");
+    this.imgReverse = loadImage("graphics/pipeReverse.png");
+
+    this.pipeGenerator = true;
 
     this.hits = function(bird) {
         if (bird.y < this.top || bird.y > height - this.bottom) {
-            
             if (bird.x > this.x && bird.x < this.x + this.w) {
                 this.highlight = true;
-                this.gameRunning = false;
                 return true;
             }
         }
@@ -27,8 +26,8 @@ function Pipe() {
         if (this.highlight) {
             fill(255, 0, 0);
         }
-        rect(this.x, 0, this.w, this.top);
-        rect(this.x, height-this.bottom, this.w, this.bottom);
+        image(this.imgReverse, this.x, 0, this.w, this.top);
+        image(this.img, this.x, height-this.bottom, this.w, this.bottom);
     };
     this.update = function() {
         this.x -= this.speed;
